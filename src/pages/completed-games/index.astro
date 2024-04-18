@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import ReviewCard from '../../components/ReviewCard.astro'
+
+import { getCollection } from 'astro:content'
+const gamePosts = await getCollection('completed-games')
+---
+
+<BaseLayout title="My Completed Games">
+  <div class="container mx-auto px-28">
+    <h1 class="font-bold text-2xl text-center">My Completed Games</h1>
+    <p class="text-center">
+      Ini adalah project menamatkan beberapa game RPG/JRPG/Story based yang akan
+      saya lakukan di tahun 2024-2025.
+    </p>
+    <hr class="h-px my-4 border-0" />
+    <div class="grid grid-cols-2 gap-3">
+      {
+        gamePosts.map(post => (
+          <ReviewCard
+            title={post.data.title}
+            imagePath={post.data.imagePath}
+            altText={post.data.description}
+            reviewPostPath={`/completed-games/${post.slug}`}
+            shortIntroduction={post.body}
+          />
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>

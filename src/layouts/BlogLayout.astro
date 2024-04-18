@@ -1,0 +1,36 @@
+---
+import '@fontsource/poppins'
+import '../style/global.css'
+
+import Navbar from '../components/Navbar.astro'
+import Footer from '../components/Footer.astro'
+
+const { frontmatter } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{frontmatter.title}</title>
+  </head>
+  <body class="bg-orange-100 text-gray-800">
+    <Navbar />
+    <div class="container mx-auto">
+      <!-- TODO: Create A Heading Image for Review post -->
+      <!-- <div class="image">
+      </div> -->
+
+      <div class="grid justify-center">
+        <h1 class="font-bold text-2xl text-center">{frontmatter.title}</h1>
+        <p class="text-center">{frontmatter.description}</p>
+        <hr class="h-px my-4 border-0" />
+        <article class="prose">
+          <slot />
+        </article>
+      </div>
+    </div>
+    <Footer />
+  </body>
+</html>
