@@ -125,9 +125,7 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"blog": {
-};
-"completed-games": {
+		"completed-games": {
 "tales-of-eternia.md": {
 	id: "tales-of-eternia.md";
   slug: "tales-of-eternia";

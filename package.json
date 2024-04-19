@@ -17,7 +17,6 @@
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource/poppins": "^5.0.13",
-    "cypress": "^13.7.3",
     "tailwindcss": "^3.4.3"
   }
 }
