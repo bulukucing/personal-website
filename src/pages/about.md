@@ -1,7 +1,7 @@
 ---
 layout: '../layouts/BlogLayout.astro'
 title: 'About me'
-description: 'Some description here..'
+description: ''
 ---
 
 Do exercitation adipisicing et ex Lorem magna cupidatat nostrud nulla aute eu nulla. Pariatur irure sint Lorem sit ipsum. Ullamco eiusmod magna nisi dolore deserunt. Duis occaecat consectetur laborum tempor enim Lorem enim aliquip. Elit do aliquip reprehenderit eu nostrud sunt. Id aliquip aute incididunt ea esse culpa sit mollit.

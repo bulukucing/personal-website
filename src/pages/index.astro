@@ -1,9 +1,28 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import { Image } from 'astro:assets'
 ---
 
 <BaseLayout title="Adol-BK">
-  <div class="container mx-auto">
-    <h1 class="text-4xl font-extrabold text-center">Hello World!</h1>
-  </div>
+  <section class="px-28 py-12 grid justify-items-center mb-48">
+    <a href="https://github.com/bulukucing" target="_blank">
+      <Image
+        src="https://avatars.githubusercontent.com/bulukucing"
+        alt="mockup"
+        inferSize={true}
+        class="rounded-full h-48 w-48 mb-6 border-2 border-teal-500 hover:border-teal-800 cursor-pointer"
+      />
+    </a>
+
+    <div class="max-w-xl text-center">
+      <h1 class="text-2xl font-extrabold mb-2">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+        culpa.
+      </h1>
+      <p class="text-medium">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab molestiae,
+        quis sequi nisi laborum amet?
+      </p>
+    </div>
+  </section>
 </BaseLayout>
