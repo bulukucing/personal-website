@@ -1,7 +1,7 @@
 ---
-layout: '../../layouts/BlogLayout.astro'
+layout: '../../layouts/MarkdownLayout.astro'
 imagePath: '/src/assets/review/tales-of-eternia/tales-of-eternia.jpg'
-title: 'Tales of Eternia'
+title: 'Harvest moon'
 description: 'Some description here..'
 platforms: ['psp', 'ps1']
 releaseDate: ' February 10, 2006'
