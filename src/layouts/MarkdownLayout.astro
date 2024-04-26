@@ -1,7 +1,9 @@
 ---
 import '@fontsource/poppins'
 import '../style/global.css'
+import { SITE_TITLE } from '../consts'
 
+import BaseHead from '../components/BaseHead.astro'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 import { Image } from 'astro:assets'
@@ -16,9 +18,10 @@ const { frontmatter } = Astro.props
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{frontmatter.title}</title>
+    <BaseHead
+      title={`${frontmatter.title} - ${SITE_TITLE}`}
+      description={frontmatter.description}
+    />
   </head>
   <body class="bg-orange-100 text-gray-800">
     <Navbar />
