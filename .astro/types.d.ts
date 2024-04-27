@@ -133,20 +133,6 @@ declare module 'astro:content' {
   collection: "completed-games";
   data: any
 } & { render(): Render[".md"] };
-"02-sample-review.md": {
-	id: "02-sample-review.md";
-  slug: "02-sample-review";
-  body: string;
-  collection: "completed-games";
-  data: any
-} & { render(): Render[".md"] };
-"03-testing-post-review-01.md": {
-	id: "03-testing-post-review-01.md";
-  slug: "03-testing-post-review-01";
-  body: string;
-  collection: "completed-games";
-  data: any
-} & { render(): Render[".md"] };
 };
 
 	};

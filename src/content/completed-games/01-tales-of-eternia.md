@@ -1,11 +1,13 @@
 ---
 layout: '../../layouts/MarkdownLayout.astro'
 imagePath: '/src/assets/review/tales-of-eternia/tales-of-eternia.jpg'
+banner: '/src/assets/samples/sample-2.jpg'
+
 title: 'Tales of Eternia'
 description: 'Some description here..'
-platforms: ['psp', 'ps1']
+platform: 'PSP'
 releaseDate: ' February 10, 2006'
-banner: '/src/assets/samples/sample-2.jpg'
+myRating: '⭐⭐⭐⭐'
 ---
 
 Non aliqua nostrud ea cillum amet sunt in nulla enim minim ad sit. Reprehenderit aute exercitation sit deserunt. Aliqua pariatur sit commodo irure in velit et sit pariatur amet. Ullamco eiusmod minim sunt aliqua aliquip nostrud minim est excepteur. Dolor fugiat laborum veniam ullamco.

@@ -1,4 +1,4 @@
-# Personal Website **(WIP)**
+# Personal Website
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/47cb1e29-55bc-4f17-9c9d-8900198b01a8/deploy-status)](https://app.netlify.com/sites/abdulqirom/deploys)
 
