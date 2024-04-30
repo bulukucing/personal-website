@@ -1,12 +1,13 @@
 ---
 layout: '../../layouts/MarkdownLayout.astro'
-imagePath: '/src/assets/review/tales-of-eternia/tales-of-eternia.jpg'
-banner: '/src/assets/samples/sample-2.jpg'
+cover: '/src/assets/review/tales-of-eternia/tales-of-eternia.jpg'
+banner: '/src/assets/samples/sample-3.jpg'
 
 title: 'Tales of Eternia'
 description: 'Some description here..'
+
+releaseDate: ' February 10, 2006'
 platform: 'PSP'
-releaseDates: ' February 10, 2006'
 myRating: 4
 ---
 

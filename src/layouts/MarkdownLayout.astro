@@ -26,10 +26,7 @@ const { frontmatter } = Astro.props
   <body class="bg-orange-100 text-gray-800">
     <Navbar />
 
-    <!-- 
-      || Banner images ||
-      Show banner images if there are banner props in frontmatter
-    -->
+    <!-- Banner Image -->
     {
       frontmatter.banner && (
         <Image

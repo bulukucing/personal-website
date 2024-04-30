@@ -8,16 +8,30 @@ const gamePosts = await getCollection('completed-games')
 
 <BaseLayout title="My Completed Games">
   <div class="container mx-auto px-6 md:px-28 mt-12 grid justify-items-center">
-    <div class="max-w-2xl mb-12">
-      <h1 class="font-bold text-2xl text-center mb-1.5">My Completed Games</h1>
-      <p class="text-center">
-        Ini adalah project menamatkan beberapa game RPG/JRPG/Story based yang
-        akan saya lakukan di tahun 2024-2025.
+    <div class="max-w-lg mb-4 md:mb-8">
+      <h1
+        class="font-bold text-2xl md:text-3xl tracking-tight text-center mb-3"
+      >
+        🎮📺 My Completed Games 🕹️✈️
+      </h1>
+      <p class="text-center md:text-lg tracking-tight">
+        Project menamatkan beberapa game RPG/JRPG/Story based di tahun
+        2024-2025.
       </p>
     </div>
 
     <div class="grid md:grid-cols-2 gap-6 md:gap-4">
       {gamePosts.map((post) => <ReviewCard post={post} />)}
+    </div>
+
+    <div
+      class="grid items-center bg-teal-900 shadow-lg shadow-teal-300 max-w-lg mt-12 border border-gray-800 rounded-xl"
+    >
+      <p class="text-center text-gray-100 p-4 tracking-tight">
+        Ini adalah penilaian amatir saya sendiri, mohon maaf jika ada kesalahan
+        dan kata-kata yang tidak jelas. jika kalian ada masukan sangat saya
+        terima
+      </p>
     </div>
   </div>
 </BaseLayout>

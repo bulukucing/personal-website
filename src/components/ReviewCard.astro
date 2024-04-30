@@ -9,20 +9,20 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/**/*.{jpeg,jpg,png,gif}'
 )
 
-if (!images[post.data.imagePath])
+if (!images[post.data.cover])
   throw new Error(
-    `"${post.data.imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+    `"${post.data.cover}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
   )
 
 const stars = new Array(post.data.myRating).fill(0)
 ---
 
 <div
-  class="max-w-sm rounded-lg text-gray-800 shadow-lg shadow-orange-200 border-2 border-gray-800"
+  class="max-w-sm rounded-lg text-gray-800 shadow-lg transition transition-1000 hover:shadow-orange-400 shadow-orange-200 border-2 border-gray-800"
 >
   <a href={`/completed-games/${post.slug}`}>
     <Image
-      src={images[post.data.imagePath]()}
+      src={images[post.data.cover]()}
       alt={post.data.description}
       class="rounded-t-lg"
     />
