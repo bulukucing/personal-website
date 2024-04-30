@@ -1,6 +1,7 @@
 ---
 import type { ImageMetadata } from 'astro'
 import { Image } from 'astro:assets'
+import StarIcon from './StarIcon.astro'
 
 const { post } = Astro.props
 
@@ -12,31 +13,34 @@ if (!images[post.data.imagePath])
   throw new Error(
     `"${post.data.imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
   )
+
+const stars = new Array(post.data.myRating).fill(0)
 ---
 
-<div class="flex flex-col max-w-sm border-2 border-teal-800 bg-orange-300">
-  <Image
-    src={images[post.data.imagePath]()}
-    alt={post.data.description}
-    class="h-56 object-cover w-full"
-  />
-  <div class="px-6 py-4">
-    <div class="mb-2.5 text-sm">
-      <p
-        class="text-2xl font-bold mb-2 tracking-tight text-center hover:text-teal-600"
-      >
-        <a href={`/completed-games/${post.slug}`}>
-          {post.data.title}
-        </a>
-      </p>
-      <p>
-        <span class="font-bold">Release date: </span>
-        {post.data.releaseDate}
-      </p>
-      <p><span class="font-bold">Platform: </span> {post.data.platform}</p>
-      <p><span class="font-bold">My star: </span>{post.data.myRating}</p>
+<div
+  class="max-w-sm rounded-lg text-gray-800 shadow-lg shadow-orange-200 border-2 border-gray-800"
+>
+  <a href={`/completed-games/${post.slug}`}>
+    <Image
+      src={images[post.data.imagePath]()}
+      alt={post.data.description}
+      class="rounded-t-lg"
+    />
+  </a>
+  <div class="p-5">
+    <a href={`/completed-games/${post.slug}`}>
+      <h5 class="mb-1.5 text-2xl text-center font-bold">
+        {post.data.title}
+      </h5>
+    </a>
+    <div class="mb-2 flex justify-center gap-2">
+      {
+        stars.map(
+          (star, i) => i < 5 && <StarIcon class="text-yellow-400 text-2xl" />
+        )
+      }
     </div>
-    <p class="text-medium line-clamp-5">
+    <p class="mb-3 font-normal text-gray-700 line-clamp-6">
       {post.body}
     </p>
   </div>

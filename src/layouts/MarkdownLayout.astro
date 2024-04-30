@@ -35,7 +35,7 @@ const { frontmatter } = Astro.props
         <Image
           src={bannerImages[frontmatter.banner]()}
           alt={frontmatter.title}
-          class="object-cover w-full rounded-t-lg h-96"
+          class="object-cover w-full md:h-96"
         />
       )
     }

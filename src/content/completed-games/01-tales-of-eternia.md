@@ -6,8 +6,8 @@ banner: '/src/assets/samples/sample-2.jpg'
 title: 'Tales of Eternia'
 description: 'Some description here..'
 platform: 'PSP'
-releaseDate: ' February 10, 2006'
-myRating: '⭐⭐⭐⭐'
+releaseDates: ' February 10, 2006'
+myRating: 4
 ---
 
 Non aliqua nostrud ea cillum amet sunt in nulla enim minim ad sit. Reprehenderit aute exercitation sit deserunt. Aliqua pariatur sit commodo irure in velit et sit pariatur amet. Ullamco eiusmod minim sunt aliqua aliquip nostrud minim est excepteur. Dolor fugiat laborum veniam ullamco.
