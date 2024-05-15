@@ -6,6 +6,7 @@ import { SITE_TITLE } from '../consts'
 import BaseHead from '../components/BaseHead.astro'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
+import BacktoTop from '../components/BacktoTop.astro'
 import { Image } from 'astro:assets'
 
 const bannerImages = import.meta.glob<{ default: ImageMetadata }>(
@@ -15,7 +16,6 @@ const bannerImages = import.meta.glob<{ default: ImageMetadata }>(
 const { frontmatter } = Astro.props
 ---
 
-<!doctype html>
 <html lang="en">
   <head>
     <BaseHead
@@ -25,6 +25,9 @@ const { frontmatter } = Astro.props
   </head>
   <body class="bg-orange-100 text-gray-800">
     <Navbar />
+
+    <!-- Back to top button with help jquery for animation-->
+    <BacktoTop />
 
     <!-- Banner Image -->
     {
@@ -36,9 +39,8 @@ const { frontmatter } = Astro.props
         />
       )
     }
-
     <!-- Article content -->
-    <div class="container mx-auto mt-8 mb-4">
+    <div class="container mx-auto mt-8 mb-4 relative">
       <div class="grid justify-center px-6 md:px-0">
         <h1 class="font-bold text-2xl text-center">{frontmatter.title}</h1>
         <p class="text-center">{frontmatter.description}</p>

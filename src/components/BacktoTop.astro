@@ -1,0 +1,41 @@
+<button
+  id="backtoTop"
+  class="hidden fixed z-40 bottom-6 right-6 bg-orange-600 text-gray-200 text-sm p-3 rounded-lg"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    viewBox="0 0 24 24"
+    ><path
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M12 5v14m6-8l-6-6m-6 6l6-6"></path></svg
+  >
+</button>
+
+<!-- Jquery, only for animate scroll top-->
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+
+<script is:inline>
+  const buttonBTT = $('#backtoTop')
+
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 300) {
+      buttonBTT.removeClass('hidden')
+    } else {
+      buttonBTT.addClass('hidden')
+    }
+  })
+
+  buttonBTT.on('click', function (e) {
+    e.preventDefault()
+    $('html, body').animate({ scrollTop: 0 }, '1000')
+  })
+</script>
