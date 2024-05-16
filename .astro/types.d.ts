@@ -126,9 +126,23 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"completed-games": {
-"01-tales-of-eternia.md": {
-	id: "01-tales-of-eternia.md";
-  slug: "01-tales-of-eternia";
+"kingdom-heart-2.md": {
+	id: "kingdom-heart-2.md";
+  slug: "kingdom-heart-2";
+  body: string;
+  collection: "completed-games";
+  data: any
+} & { render(): Render[".md"] };
+"tales-of-eternia-1.md": {
+	id: "tales-of-eternia-1.md";
+  slug: "tales-of-eternia-1";
+  body: string;
+  collection: "completed-games";
+  data: any
+} & { render(): Render[".md"] };
+"ys7.md": {
+	id: "ys7.md";
+  slug: "ys7";
   body: string;
   collection: "completed-games";
   data: any
