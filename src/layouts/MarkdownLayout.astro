@@ -7,6 +7,7 @@ import BaseHead from '../components/BaseHead.astro'
 import Navbar from '../components/Navbar.astro'
 import Footer from '../components/Footer.astro'
 import BacktoTop from '../components/BacktoTop.astro'
+import StarIcon from '../components/StarIcon.astro'
 import { Image } from 'astro:assets'
 
 const bannerImages = import.meta.glob<{ default: ImageMetadata }>(
@@ -51,51 +52,77 @@ const { frontmatter } = Astro.props
           </p>
         </div>
 
-        <!-- Game Info: Little bit mess -->
+        <!-- Game Info -->
         {
           frontmatter.gameInfo && frontmatter.gameInfo == true && (
-            <div class="py-4 px-6 mb-12 border-2 border-gray-900 bg-orange-300">
-              <ul class="list-none list-outside leading-7 text-sm">
-                <li>
-                  <p>
-                    <span class="font-semibold">Penerbit:</span>
-
+            <div class="bg-orange-300 py-4 px-6 mb-12 border-2 border-gray-900 rounded">
+              <table class="w-full text-sm text-left">
+                <tr>
+                  <th scope="row" class="px-1 py-1.5">
+                    Penerbit
+                  </th>
+                  <td class="px-1 py-1.5">:</td>
+                  <td class="px-1 py-1.5">
                     {frontmatter.publisher.length > 0 ? (
                       <span>{frontmatter.publisher.join(', ')}</span>
                     ) : (
                       <span>{frontmatter.publisher}</span>
                     )}
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <span class="font-semibold">Tanggal rilis:</span>
-                    <span>{frontmatter.releaseDate}</span>
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <span class="font-semibold">Platforms:</span>
-
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-1 py-1.5">
+                    Tanggal rilis
+                  </th>
+                  <td class="px-1 py-1.5">:</td>
+                  <td class="px-1 py-1.5">{frontmatter.releaseDate}</td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-1 py-1.5">
+                    Platform
+                  </th>
+                  <td class="px-1 py-1.5">:</td>
+                  <td class="px-1 py-1.5">
                     {frontmatter.platforms.length > 0 ? (
                       <span>{frontmatter.platforms.join(', ')}</span>
                     ) : (
                       <span>{frontmatter.platforms}</span>
                     )}
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    <span class="font-semibold">Genre:</span>
-
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-1 py-1.5">
+                    Genre
+                  </th>
+                  <td class="px-1 py-1.5">:</td>
+                  <td class="px-1 py-1.5">
                     {frontmatter.genres.length > 0 ? (
                       <span>{frontmatter.genres.join(', ')}</span>
                     ) : (
                       <span>{frontmatter.genres}</span>
                     )}
-                  </p>
-                </li>
-              </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row" class="px-1 py-1.5">
+                    Rating ku
+                  </th>
+                  <td class="px-1 py-1.5">:</td>
+                  <td class="px-1 py-1.5">
+                    {new Array(frontmatter.myRating)
+                      .fill(0)
+                      .map(
+                        (star, i) =>
+                          i < 5 && (
+                            <StarIcon class="text-yellow-200 inline-block text-lg" />
+                          )
+                      )}
+                    <span class="ml-1.5 font-semibold">
+                      {frontmatter.myRating <= 5 ? frontmatter.myRating : 5}/5
+                    </span>
+                  </td>
+                </tr>
+              </table>
             </div>
           )
         }
