@@ -42,9 +42,65 @@ const { frontmatter } = Astro.props
     <!-- Article content -->
     <div class="container mx-auto mt-8 mb-4 relative">
       <div class="grid justify-center px-6 md:px-0">
-        <h1 class="font-bold text-2xl text-center">{frontmatter.title}</h1>
-        <p class="text-center">{frontmatter.description}</p>
-        <hr class="h-px my-4 border-0" />
+        <div class="mb-8">
+          <h1 class="font-bold text-3xl tracking-tight text-center mb-2">
+            {frontmatter.title}
+          </h1>
+          <p class="font-thin text-base tracking-tight text-center">
+            {frontmatter.description}
+          </p>
+        </div>
+
+        <!-- Game Info: Little bit mess -->
+        {
+          frontmatter.gameInfo && frontmatter.gameInfo == true && (
+            <div class="py-4 px-6 mb-12 border-2 border-gray-900 bg-orange-300">
+              <ul class="list-none list-outside leading-7 text-sm">
+                <li>
+                  <p>
+                    <span class="font-semibold">Penerbit:</span>
+
+                    {frontmatter.publisher.length > 0 ? (
+                      <span>{frontmatter.publisher.join(', ')}</span>
+                    ) : (
+                      <span>{frontmatter.publisher}</span>
+                    )}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span class="font-semibold">Tanggal rilis:</span>
+                    <span>{frontmatter.releaseDate}</span>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span class="font-semibold">Platforms:</span>
+
+                    {frontmatter.platforms.length > 0 ? (
+                      <span>{frontmatter.platforms.join(', ')}</span>
+                    ) : (
+                      <span>{frontmatter.platforms}</span>
+                    )}
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span class="font-semibold">Genre:</span>
+
+                    {frontmatter.genres.length > 0 ? (
+                      <span>{frontmatter.genres.join(', ')}</span>
+                    ) : (
+                      <span>{frontmatter.genres}</span>
+                    )}
+                  </p>
+                </li>
+              </ul>
+            </div>
+          )
+        }
+
+        <hr class="h-px mb-2 border-0" />
         <article class="prose">
           <slot />
         </article>

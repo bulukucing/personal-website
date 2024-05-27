@@ -1,10 +1,18 @@
 ---
 layout: '../../layouts/MarkdownLayout.astro'
-cover: '/src/assets/samples/sample-3.jpg'
-banner: '/src/assets/samples/sample-3.jpg'
+cover: '/src/assets/review/ys-7/ys-7.jpg'
+banner: '/src/assets/review/ys-7/banner.jpg'
+
+# Game Info
+title: 'Ys Seven'
+description: 'Review Game YS Seven'
+releaseDate: '16 September, 2009'
+publisher: ['Nihon Falcom', 'XSEED Games']
+platforms: ['PSP', 'Windows']
+genres: ['Adventure', 'Action RPG']
+
+gameInfo: true
 reviewPubDate: 2022-05-15
-title: 'Tales of Eternia'
-description: 'Some description here..'
 myRating: 5
 ---
 
