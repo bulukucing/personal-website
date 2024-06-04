@@ -3,6 +3,7 @@
 
 export const SITE_TITLE = 'Bulu Kucing Website'
 export const SITE_DESCRIPTION = 'Bulu Kucing Personal website'
+export const AUTHOR_NAME = 'Bulu Kucing'
 
 export const SOCIAL_LINK = {
   facebook: 'https://facebook.com/abdulqirom.323',
